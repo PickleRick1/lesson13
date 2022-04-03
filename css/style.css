@@ -1,0 +1,496 @@
+@import "null.css";
+.wrapper {
+	font-size: 0;
+	min-height: 100%;
+	overflow: hidden;
+	color: black;
+	/*background-color: black;*/
+	background: url(../img/bg.jpg) 0 0/cover no-repeat;
+}
+[class*="__container"] {
+	margin: 0 auto;
+	max-width: 900px;
+	padding: 100px 15px 0;
+}
+
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+@keyframes clouds{
+	0%{
+		transform: rotate(5deg);
+	}
+	25%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(-5deg);
+	}
+	75%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(5deg);
+	}
+}
+@keyframes move-car{
+	0%{
+		transform: translate(-800px, 0);
+	}
+	100%{
+		transform: translate(2000px, 0);
+	}
+}
+@keyframes opacity-text{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+.sun{
+	background-color: yellow;
+	width: 150px;
+	height: 150px;
+	animation-name: rotate;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	display: inline-block;
+	position: relative;
+	top: 60px;
+	left: 30px;
+}
+.sun::after{
+	content: "";
+	background-color:  yellow;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotate(-45deg);
+}
+
+.cloud{
+	display: inline-block;
+	
+}
+.cloud_position-1{
+	position: relative;
+	top: -147px;
+    left: 445px;
+	
+}
+.cloud_position-2{
+	position: relative;
+	top:-42px;
+	right: 27px;
+	
+}
+.cloud_position-3{
+	position: relative;
+	top:0px;
+	left:545px;
+	
+}
+.cloud img{
+	width: 140px;
+	transform-origin: center;
+	animation-name: clouds;
+	animation-duration: 5s;
+	animation-delay: 0;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.shark{
+	position: relative;
+	top: 0;
+	left: 500px;
+}
+.shark img{
+	width: 500px;
+}
+.car{
+	padding: 0px 0 100px 0;
+	animation: move-car 2s linear 0s 1 normal forwards;
+	/*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+}
+.words {
+	font-size: 20px;
+	position: relative;
+
+}
+.words__image{
+	padding: 200px 0 0 0;
+	position: absolute;
+    top: -105px;
+    left: 440px;
+    z-index: 130;
+    width: 100%;
+    height: 100%;
+    background: url(../img/dialog.png) 0 0 / 200px 200px no-repeat;
+	animation: opacity-text 20s ease 2s 1 normal none;
+	opacity: 0;
+}
+.words__text1 {
+	position: absolute;
+	top:35px;
+	left: 26px;
+	animation: opacity-text 5s ease 2s 1 normal none;
+	opacity: 0;
+}
+
+.words__text2 {
+	position: absolute;
+	top:35px;
+	left: 26px;
+	animation: opacity-text 5s ease 7s 1 normal none;
+	opacity: 0;
+}
+.words__text3 {
+	position: absolute;
+	top:35px;
+	left: 26px;
+	animation: opacity-text 5s ease 12s 1 normal none;
+	opacity: 0;
+}
+.trunk {
+	display: inline-block;
+	position: relative;
+}
+.trunk__wing-up {
+	width: 200px;
+	height: 35px;
+	background: red;
+	border-radius: 60% 0 0 0;
+	position: relative;
+}
+.trunk__wing-up::before {
+	content: "";
+	background: orange;
+	width: 24px;
+	height: 10px;
+	position: absolute;
+	bottom: -4px;
+	left: 20px;
+	z-index: 1;
+}
+.trunk__wing-up::after {
+	content: "";
+	background: #afafaf;
+	height: 2px;
+	width: 70%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.trunk__wing-middle {
+	width: 200px;
+	height: 50px;
+	background: red;
+	position: relative;
+}
+.trunk__wing-middle::before {
+	content: "";
+	background: red;
+	width: 5px;
+	height: 20px;
+	position: absolute;
+	top: 0;
+	left: -5px;
+	border-radius: 75% 0 0 0;
+}
+.trunk__wing-middle::after {
+	content: "";
+	background: yellow;
+	width: 5px;
+	height: 20px;
+	position: absolute;
+	bottom: 10px;
+	left: -5px;
+	border-radius: 0 0 0 75%;
+}
+.trunk__wing-down {
+	width: 200px;
+	height: 35px;
+	background: red;
+	border-radius: 0 0 0 100px;
+}
+.trunk__bump-panel-up {
+	width: 34px;
+	height: 10px;
+	background: #000;
+	border-radius: 14px 0 0 0;
+	transform: translate(-14px, -3px) skew(8deg, 0deg);
+}
+.trunk__bump-panel-donw {
+	width: 34px;
+	height: 10px;
+	background: #000;
+	border-radius: 0 0 0 14px;
+	transform: translate(-13px, -4px) skew(8deg, 0deg);
+}
+.trunk__wheel {
+	position: absolute;
+	bottom: -62px;
+	right: -57px;
+}
+.trunk__hole {
+	position: absolute;
+	bottom: 0;
+	right: -66px;
+}
+.hole {
+	width: 140px;
+	height: 69px;
+	background-color: black;
+	border-radius: 80px 80px 0 0;
+}
+.hood {
+	display: inline-block;
+	position: relative;
+}
+.hood__wing-up {
+	width: 200px;
+	height: 35px;
+	background: red;
+	border-radius: 0 60% 0 0;
+	position: relative;
+}
+.hood__wing-up::before {
+	content: "";
+	background: orange;
+	width: 24px;
+	height: 10px;
+	position: absolute;
+	bottom: -4px;
+	right: 20px;
+	z-index: 1;
+}
+.hood__wing-up::after {
+	content: "";
+	background: #afafaf;
+	height: 2px;
+	width: 70%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.hood__wing-middle {
+	width: 200px;
+	height: 50px;
+	background: red;
+}
+.hood__wing-down {
+	width: 200px;
+	height: 35px;
+	background: red;
+	border-radius: 0 0 100px 0;
+	position: relative;
+}
+.hood__bump-panel-up {
+	position: absolute;
+	top: 0;
+	right: -14px;
+	width: 34px;
+	height: 10px;
+	background: #000;
+	border-radius: 0 14px 0 0;
+	transform: skew(-8deg, 0deg);
+}
+.hood__bump-panel-donw {
+	position: absolute;
+	top: 9px;
+	right: -13px;
+	width: 34px;
+	height: 10px;
+	background: #000;
+	border-radius: 0 0 14px 0;
+	transform: skew(-8deg, 0deg);
+}
+.hood__hole {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.hood__wheel {
+	position: absolute;
+	bottom: -62px;
+	left: 11px;
+}
+.car__middle {
+	display: inline-block;
+	
+}
+.middle {
+}
+.middle__door {
+	width: 205px;
+	display: inline-block;
+	background: red;
+}
+.middle__wing-up {
+	width: 203px;
+	height: 35px;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	position: relative;
+}
+.middle__doorhandle{
+	background: #afafaf;
+	width: 23px;
+	height: 12px;
+	transform: translate(10px,10px);
+	border-radius: 30%;
+	position: relative;
+}
+.middle__doorhandle::after{
+	content: '';
+	height: 3px;
+	width: 100%;
+	background: rgb(46, 45, 45);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-radius: 0 0 100% 100%;
+
+}
+.middle__wing-up__margin {
+	margin: 0 0 0 1px;
+}
+.middle__wing-middle__margin {
+	margin: 0 0 0 1px;
+}
+.middle__wing-up::after {
+	content: "";
+	background: #afafaf;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.middle__wing-middle {
+	width: 203px;
+	height: 70px;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.middle__wing-down {
+	position: relative;
+	height: 15px;
+}
+/*.middle__wing-down::before {
+	content: "";
+	background: #afafaf;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	top: 1px;
+	right: 0;
+}*/
+.middle__panel {
+	background: #afafaf;
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	top: 1px;
+	right: 0;
+}
+.middle__panel_width {
+	width: 68%;
+}
+.middle__wing-middle_border-radius {
+	border-radius: 0 0 14px;
+}
+.middle__door_left {
+}
+.wheel {
+	background: #303437;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	animation: rotate 5s linear 0s infinite;
+	/*position: relative;*/
+}
+.wheel__disk {
+	background: #262335;
+	border: 3px solid #6f828a;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	transform: translate(20px, 20px);
+	/*position: absolute;
+	top: 18px;
+	left: 18px;
+	z-index: 1;*/
+
+	overflow: hidden;
+}
+.wheel__wing {
+	background: #6f828a;
+	width: 75px;
+	height: 5px;
+	
+}
+.wheel__circle {
+	background: #262335;
+	border: 3px solid #6f828a;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	position: absolute;
+	top: 27px;
+	left: 28px;
+}
+.wheel__wing_central {
+	transform: translate(0px, 34px);
+}
+.wheel__wing_vertical {
+	transform: translate(0px, 30px) rotate(90deg);
+}
+.wheel__wing_rotate-130 {
+	transform: translate(0px, 24px) rotate(130deg);
+}
+.wheel__wing_rotate-50 {
+	transform: translate(0px, 20px) rotate(50deg);
+}
+.roof{
+    width: 328px;
+    height: 165px;
+    background: red;
+    border-radius: 24% 27% 0% 0% / 7% 6% 17% 1%;
+    transform: perspective(307px) rotateX(46deg) translate(33px,12px);
+	position: relative;
+}
+.roof__door-left{
+	position: absolute;
+    top: 12px;
+    left: 14px;
+    width: 150px;
+    height: 150px;
+    background: blue;
+    border-radius: 18% 1% 0% 0%;
+    transform: skew(-3deg, 0deg);
+}
+.roof__door-right{
+	position: absolute;
+	top: 11px;
+	right: 10px;
+	width: 150px;
+	height: 150px;
+	background: blue;
+	border-radius: 0% 33% 0% 0%;
+    transform: skew(-3deg, 0deg);
+}
